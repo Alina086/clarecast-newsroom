@@ -13,6 +13,13 @@ export async function loadArticles(): Promise<Article[]> {
     header: true,
     dynamicTyping: true,
     skipEmptyLines: true,
+    transform: (value: string) => {
+      // Convert string "null" to actual null
+      if (value === 'null' || value === '') {
+        return null;
+      }
+      return value;
+    }
   });
 
   return result.data;
@@ -56,7 +63,7 @@ export function filterByCompanies(
  */
 export function filterByHeadcountImpact(articles: Article[]): Article[] {
   return articles.filter(article =>
-    article.explicit_headcount_change_ind === 'Y'
+    article.explicit_headcount_change_ind === true
   );
 }
 
