@@ -31,10 +31,10 @@ export function ArticleCard({ article, onClick }: ArticleCardProps) {
       onClick={onClick}
     >
       <CardHeader>
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
           <div className="flex-1">
             <CardTitle className="text-xl mb-2">{article.title}</CardTitle>
-            <CardDescription className="flex items-center gap-4 text-sm">
+            <CardDescription className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm">
               <span className="flex items-center gap-1">
                 <Calendar className="w-3 h-3" />
                 {formattedDate}
