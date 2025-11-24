@@ -7,6 +7,7 @@ import { ArticleCard } from '@/components/article-card'
 import { CompanySelector } from '@/components/company-selector'
 import { HeadcountFilter } from '@/components/headcount-filter'
 import { ArticleDetailModal } from '@/components/article-detail-modal'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function Home() {
   // State to store our articles
@@ -51,10 +52,13 @@ export default function Home() {
   // Show the articles
   return (
     <div className="min-h-screen bg-background p-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header and Filters section - sticky */}
-        <div className="sticky top-0 z-10 bg-background pb-6 mb-2">
-          <h1 className="text-3xl font-bold mb-2">Clarecast Newsroom</h1>
+        <div className="sticky top-0 z-10 bg-background pt-4 pb-6 mb-2">
+          <div className="flex items-center justify-between mb-2">
+            <h1 className="text-3xl font-bold">Clarecast Newsroom</h1>
+            <ThemeToggle />
+          </div>
           <p className="text-muted-foreground mb-6">
             {selectedCompanies.length > 0 || headcountFilterEnabled
               ? `Showing ${filteredArticles.length} of ${articles.length} articles`
