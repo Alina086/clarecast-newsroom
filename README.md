@@ -74,7 +74,9 @@ public/
 **Data**: The dataset contains null values for some fields (headcount amount, author names and others).
 
 ### Future Work
-This prototype demonstrates core functionality. Future iterations could add pagination, advanced filtering, export capabilities, and other enhancements based on user needs.
+- Add pagination instead of endless scroll for better user experience and performance with large datasets
+- Include additional filters (date range, author, title, article source, etc.)
+- Highlight key headcount-related points from detailed article view for easier scanning
 
 
 
