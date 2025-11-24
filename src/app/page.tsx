@@ -8,6 +8,8 @@ import { CompanySelector } from '@/components/company-selector'
 import { HeadcountFilter } from '@/components/headcount-filter'
 import { ArticleDetailModal } from '@/components/article-detail-modal'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { Badge } from '@/components/ui/badge'
+import { X } from 'lucide-react'
 
 export default function Home() {
   // State to store our articles
@@ -80,6 +82,31 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* Selected Companies Display */}
+        {selectedCompanies.length > 0 && (
+          <div className="mb-6 flex flex-wrap gap-2">
+            {selectedCompanies.map(ticker => {
+              const company = companies.find(c => c.ticker === ticker)
+              return (
+                <Badge
+                  key={ticker}
+                  variant="secondary"
+                  className="pl-3 pr-2 py-1.5 flex items-center gap-2"
+                >
+                  <span>{company?.name}</span>
+                  <button
+                    onClick={() => setSelectedCompanies(prev => prev.filter(t => t !== ticker))}
+                    className="hover:bg-muted-foreground/20 rounded-full p-0.5 transition-colors"
+                    aria-label={`Remove ${company?.name}`}
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                </Badge>
+              )
+            })}
+          </div>
+        )}
 
         {/* Articles feed */}
         <div className="flex flex-col gap-4">

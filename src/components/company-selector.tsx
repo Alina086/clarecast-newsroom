@@ -80,12 +80,17 @@ export function CompanySelector({
                     value={`${company.name} ${company.ticker}`}
                     onSelect={() => toggleCompany(company.ticker)}
                   >
-                    <Check
-                      className={cn(
-                        'mr-2 h-4 w-4',
-                        isSelected ? 'opacity-100' : 'opacity-0'
-                      )}
-                    />
+                    <div className={cn(
+                      'mr-2 h-4 w-4 border-2 rounded flex items-center justify-center shrink-0',
+                      isSelected ? 'bg-primary border-primary' : 'border-muted-foreground/30 bg-background'
+                    )}>
+                      <Check
+                        className={cn(
+                          'h-3 w-3 text-primary-foreground',
+                          isSelected ? 'opacity-100' : 'opacity-0'
+                        )}
+                      />
+                    </div>
                     <div className="flex flex-col">
                       <span>{company.name}</span>
                       <span className="text-xs text-muted-foreground">
