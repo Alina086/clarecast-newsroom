@@ -46,6 +46,11 @@ A news article feed interface for tracking company hiring and headcount changes
 ## Notes
 **Data**: The dataset contains null values for some fields (headcount amount, author names and others).
 
+## Future Work
+- Add pagination instead of endless scroll for better user experience and performance with large datasets
+- Include additional filters (date range, author, title, article source, etc.)
+- Highlight key headcount-related points from detailed article view for easier scanning
+
 
 
 
