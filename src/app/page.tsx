@@ -7,7 +7,7 @@ import { ArticleCard } from '@/components/article-card'
 import { CompanySelector } from '@/components/company-selector'
 import { HeadcountFilter } from '@/components/headcount-filter'
 import { ArticleDetailModal } from '@/components/article-detail-modal'
-import { ThemeToggle } from '@/components/theme-toggle'
+import { ModeToggle } from '@/components/mode-toggle'
 import { Badge } from '@/components/ui/badge'
 import { X } from 'lucide-react'
 
@@ -59,7 +59,7 @@ export default function Home() {
         <div className="sticky top-0 z-10 bg-background pt-4 pb-6 mb-2">
           <div className="flex items-center justify-between gap-4 mb-2">
             <h1 className="text-2xl sm:text-3xl font-bold">Clarecast Newsroom</h1>
-            <ThemeToggle />
+            <ModeToggle />
           </div>
           <p className="text-muted-foreground mb-6">
             {selectedCompanies.length > 0 || headcountFilterEnabled
