@@ -57,8 +57,8 @@ export default function Home() {
       <div className="max-w-6xl mx-auto">
         {/* Header and Filters section - sticky */}
         <div className="sticky top-0 z-10 bg-background pt-4 pb-6 mb-2">
-          <div className="flex items-center justify-between mb-2">
-            <h1 className="text-3xl font-bold">Clarecast Newsroom</h1>
+          <div className="flex items-center justify-between gap-4 mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold">Clarecast Newsroom</h1>
             <ThemeToggle />
           </div>
           <p className="text-muted-foreground mb-6">
